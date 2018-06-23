@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - My ASP.NET Application</title>
+    <style type="text/css">
+
+        #map {
+            border: 1px solid black;
+            height: 600px;
+            /* http://stackoverflow.com/questions/1260122/expand-a-div-to-take-the-remaining-width */
+            width: auto;
+            overflow: hidden;
+            position: relative;
+            margin-right: 10px;
+            padding-right: 15px;
+            margin-bottom: 10px;
+        }
+
+        #placeInfo {
+            margin-left: 10px;
+            float: left;
+            display: inline-block;
+            vertical-align: top;
+            width: 20%;
+            max-width: 300px;
+            min-width: 130px;
+            font-weight: bold;
+        }
+
+        #directionsPanel {
+            /*            border: 1px solid green;*/
+            padding-left: 0px;
+            margin-left: 10px;
+            float: right;
+            width: 300px;
+        }
+
+
+        .on {
+            display: inline;
+        }
+
+        input {
+            width: 95%; /*90% of #placeInfo's width */
+        }
+
+
+        #placeInfo > t {
+            font-size: small;
+        }
+
+        #placeInfo > a {
+            /*            float:right;*/
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        #placeInfo > h3 {
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+
+        .searchInput {
+            /*            padding-bottom: 20px;*/
+        }
+
+        #searchbox {
+            margin-top: 20px;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        ol {
+            font: 13px/1.4 Helvetica, arial;
+        }
+
+            ol > li {
+                margin-bottom: 10px;
+            }
+
+
+        /*http://www.webdesignerdepot.com/2012/11/how-to-create-a-simple-css3-tooltip/*/
+        .tooltip {
+            display: inline;
+            position: relative;
+        }
+
+            .tooltip:hover:after {
+                background: #333;
+                background: rgba(0,0,0,.8);
+                border-radius: 5px;
+                bottom: 26px;
+                color: #fff;
+                content: attr(title); /*set content to the title of the element*/
+                left: 20%;
+                padding: 5px 15px;
+                position: absolute;
+                z-index: 98;
+                width: 220px;
+            }
+
+            .tooltip:hover:before {
+                border: solid;
+                border-color: #333 transparent;
+                border-width: 6px 6px 0 6px;
+                bottom: 20px;
+                content: "";
+                left: 50%;
+                position: absolute;
+                z-index: 99;
+            }
+    </style>
+
+</head>
+<body>
+    <div class="container body-content">
+   <h2>About.</h2>
+<h3>Your application description page.</h3>
+
+<div class="row">
+    Konumum:
+    <select id="comboMyLocType">
+        <option value="M">elle belirlensin</option>
+        <option value="O">otomatik belirlensin</option>
+    </select>
+    <a class="btn btn-default btn-success" id="btnWait">Bir sonraki servis için beklemeye başla</a>
+</div>
+<div style="height:-webkit-fill-available;">
+    <div id="map"></div>
+</div>
+    </div>
+
+    <script src="../static/app/scripts/jquery-1.10.2.js"></script>
+    <script src="../static/app/scripts/bootstrap.js"></script>  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB04Iha4MnlTVAvjGXQ_9vlQoH-ZTijq4U&callback=initMap&libraries=places" async defer></script>
+    <script src="../static/app/scripts/map.js"></script>
+</body>
+</html>
